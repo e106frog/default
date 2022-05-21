@@ -1,4 +1,4 @@
-html, body, .container { display: block; height: 100%;}
+html, body, .container { display: block; height: 100%; z-index: 10;}
 body:before {
     content: '';
     position: absolute; top: 0; left: 0;
@@ -19,7 +19,7 @@ body:after {
 .btns{ display: block; padding: 10px 0;}
 .btns .btn { display: block; height: 60px; line-height: 45px; margin-bottom: 10px; font-size: 24px;}
 .mask {
-    position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 10; background: #fff;
+    position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 20; background: #fff;
     display: none;
 }
 .mask img { width: 100%;}
