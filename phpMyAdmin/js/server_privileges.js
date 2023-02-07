@@ -467,6 +467,7 @@ AJAX.registerOnload('server_privileges.js', function () {
         });
 
         // make first menu item active
+        // TODO: support URL hash history
         $topmenu2.find('> :first-child a').addClass('tabactive');
         $edit_user_dialog.prepend($topmenu2);
 

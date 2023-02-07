@@ -1171,6 +1171,7 @@ AJAX.registerOnload('server_status_monitor.js', function () {
 
         var tempTooltipContentEditor = function (str, seriesIndex, pointIndex, plot) {
             var j;
+            // TODO: move style to theme CSS
             var tooltipHtml = '<div style="font-size:12px;background-color:#FFFFFF;' +
                 'opacity:0.95;filter:alpha(opacity=95);padding:5px;">';
             // x value i.e. time
@@ -1959,6 +1960,7 @@ AJAX.registerOnload('server_status_monitor.js', function () {
         var query = rowData.argument || rowData.sql_text;
 
         if (codemirror_editor) {
+            // TODO: somehow PMA_SQLPrettyPrint messes up the query, needs be fixed
             // query = PMA_SQLPrettyPrint(query);
             codemirror_editor.setValue(query);
             // Codemirror is bugged, it doesn't refresh properly sometimes.

@@ -105,6 +105,7 @@ class TableChartController extends TableController
 
         /**
          * Extract values for common work
+         * @todo Extract common files
          */
         $db = &$this->db;
         $table = &$this->table;
@@ -191,6 +192,7 @@ class TableChartController extends TableController
     {
         /**
          * Extract values for common work
+         * @todo Extract common files
          */
         $db = &$this->db;
         $table = &$this->table;

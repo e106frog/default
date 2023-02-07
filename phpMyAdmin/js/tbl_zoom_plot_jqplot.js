@@ -1,3 +1,4 @@
+// TODO: change the axis
 /* vim: set expandtab sw=4 ts=4 sts=4: */
 /**
  ** @fileoverview JavaScript functions used on tbl_select.php
@@ -327,8 +328,10 @@ AJAX.registerOnload('tbl_zoom_plot_jqplot.js', function () {
                         getTimeStamp(selectedRow[xLabel], $('#types_0').val());
                 } else {
                     series[0][searchedDataKey][0] = '';
+                    // TODO: text values
                 }
                 currentChart.series[0].data = series[0];
+                // TODO: axis changing
                 currentChart.replot();
             }
             if (yChange) {
@@ -341,8 +344,10 @@ AJAX.registerOnload('tbl_zoom_plot_jqplot.js', function () {
                         getTimeStamp(selectedRow[yLabel], $('#types_1').val());
                 } else {
                     series[0][searchedDataKey][1] = '';
+                    // TODO: text values
                 }
                 currentChart.series[0].data = series[0];
+                // TODO: axis changing
                 currentChart.replot();
             }
         } // End plot update
@@ -507,6 +512,7 @@ AJAX.registerOnload('tbl_zoom_plot_jqplot.js', function () {
             if (originalXType === 'date') {
                 format = '%Y-%m-%d';
             }
+            // TODO: does not seem to work
             // else if (originalXType === 'time') {
             //  format = '%H:%M';
             // } else {

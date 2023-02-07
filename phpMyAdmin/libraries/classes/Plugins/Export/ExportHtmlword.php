@@ -116,7 +116,7 @@ class ExportHtmlword extends ExportPlugin
 
             <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"'
             . ' "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-            <html lang="zh">
+            <html>
             <head>
                 <meta http-equiv="Content-type" content="text/html;charset='
             . (isset($charset) ? $charset : 'utf-8') . '" />

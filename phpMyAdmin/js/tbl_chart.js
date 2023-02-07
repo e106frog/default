@@ -159,6 +159,7 @@ function drawChart () {
     currentSettings.width = $('#resizer').width() - 20;
     currentSettings.height = $('#resizer').height() - 20;
 
+    // TODO: a better way using .redraw() ?
     if (currentChart !== null) {
         currentChart.destroy();
     }

@@ -334,6 +334,7 @@ class TableRelationController extends TableController
         }
         $this->response->addJSON('columns', $columns);
 
+        // @todo should be: $server->db($db)->table($table)->primary()
         $primary = Index::getPrimary($foreignTable, $_POST['foreignDb']);
         if (false === $primary) {
             return;

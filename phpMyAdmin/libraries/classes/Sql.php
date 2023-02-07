@@ -101,6 +101,7 @@ class Sql
                 'ORDER BY ' . $sortCol
             );
 
+            // TODO: Avoid reparsing the query.
             $analyzed_sql_results = Query::getAll($full_sql_query);
         } else {
             // Store the remembered table into session.
@@ -226,7 +227,7 @@ class Sql
                 . htmlspecialchars($_POST['curr_value'])
                 . '</span>'
                 . '<a href="browse_foreigners.php" data-post="'
-                . Url::getCommon($_url_params, '') . '"'
+                . Url::getCommon($_url_params, '', false) . '"'
                 . 'class="ajax browse_foreign" ' . '>'
                 . __('Browse foreign values')
                 . '</a>';

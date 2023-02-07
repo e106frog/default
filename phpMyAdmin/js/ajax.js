@@ -199,6 +199,7 @@ var AJAX = {
         replace: function (content) {
             $('#floating_menubar').html(content)
                 // Remove duplicate wrapper
+                // TODO: don't send it in the response
                 .children().first().remove();
             $('#topmenu').menuResizer(PMA_mainMenuResizerCallback);
         }
@@ -760,6 +761,7 @@ $(function () {
                 var params = 'ajax_request=true' + PMA_commonParams.get('arg_separator') + 'ajax_page_request=true';
                 var url = state.url || location.href;
                 $.get(url, params, AJAX.responseHandler);
+                // TODO: Check if sometimes menu is not retrieved from server,
                 // Not sure but it seems menu was missing only for printview which
                 // been removed lately, so if it's right some dead menu checks/fallbacks
                 // may need to be removed from this file and Header.php

@@ -312,7 +312,7 @@ class ErrorHandler
     protected function dispPageStart($error = null)
     {
         Response::getInstance()->disable();
-        echo '<html lang="zh"><head><title>';
+        echo '<html><head><title>';
         if ($error) {
             echo $error->getTitle();
         } else {

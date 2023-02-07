@@ -724,6 +724,7 @@ function confirmQuery (theForm1, sqlQuery1) {
 
     // Confirms a "DROP/DELETE/ALTER/TRUNCATE" statement
     //
+    // TODO: find a way (if possible) to use the parser-analyser
     // for this kind of verification
     // For now, I just added a ^ to check for the statement at
     // beginning of expression
@@ -859,6 +860,7 @@ function checkFormElementInRange (theForm, theFieldName, message, min, max) {
 
 
 function checkTableEditForm (theForm, fieldsCnt) {
+    // TODO: avoid sending a message if user just wants to add a line
     // on the form but has not completed at least one field name
 
     var atLeastOneField = 0;
@@ -2760,6 +2762,7 @@ function PMA_SQLPrettyPrint (string) {
             if (blockStack[0] === 'statement') {
                 output += '\n' + tabs(indentLevel + 1);
             }
+            // Todo: Also split and or blocks in newlines & indentation++
             // if (blockStack[0] === 'generic')
             //   output += ...
         }
@@ -5140,6 +5143,7 @@ function configGet (key, cached) {
     // Result not found in local storage or ignored.
     // Hitting the server.
     $.ajax({
+        // TODO: This is ugly, but usually when a configuration is needed,
         // processing cannot continue until that value is found.
         // Another solution is to provide a callback as a parameter.
         async: false,

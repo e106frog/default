@@ -158,7 +158,7 @@ function loadChildNodes (isNode, $expandElem, callback) {
     }
 
     var url = $('#pma_navigation').find('a.navigation_url').attr('href');
-    $.get(url, params, function (data) {
+    $.post(url, params, function (data) {
         if (typeof data !== 'undefined' && data.success === true) {
             $destination.find('div.list_container').remove(); // FIXME: Hack, there shouldn't be a list container there
             if (isNode) {
@@ -1036,14 +1036,12 @@ function PMA_selectCurrentDb () {
 function PMA_navigationTreePagination ($this) {
     var $msgbox = PMA_ajaxShowMessage();
     var isDbSelector = $this.closest('div.pageselector').is('.dbselector');
-    var url;
-    var params;
+    var url = 'navigation.php';
+    var params = 'ajax_request=true';
     if ($this[0].tagName === 'A') {
-        url = $this.attr('href');
-        params = 'ajax_request=true';
+        params += PMA_commonParams.get('arg_separator') + $this.getPostData();
     } else { // tagName === 'SELECT'
-        url = 'navigation.php';
-        params = $this.closest('form').serialize() + PMA_commonParams.get('arg_separator') + 'ajax_request=true';
+        params += PMA_commonParams.get('arg_separator') + $this.closest('form').serialize();
     }
     var searchClause = PMA_fastFilter.getSearchClause();
     if (searchClause) {
@@ -1300,6 +1298,7 @@ var ResizeHandler = function () {
         if ($nav_tree_content.length > 0) {
             $nav_tree_content.height($nav_tree.height() - $nav_tree_content.position().top);
         } else {
+            // TODO: in fast filter search response there is no #pma_navigation_tree_content, needs to be added in php
             $nav_tree.css({
                 'overflow-y': 'auto'
             });

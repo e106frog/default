@@ -132,6 +132,8 @@ if (! defined('PMA_NO_SESSION')) {
     Session::setUp($GLOBALS['PMA_Config'], $GLOBALS['error_handler']);
 }
 
+Core::populateRequestWithEncryptedQueryParams();
+
 /**
  * init some variables LABEL_variables_init
  */
@@ -404,6 +406,7 @@ if (! defined('PMA_MINIMUM_COMMON')) {
             PhpMyAdmin\SqlParser\Lexer::$DEFAULT_DELIMITER = $_REQUEST['sql_delimiter'];
         }
 
+        // TODO: Set SQL modes too.
 
     } else { // end server connecting
         $response = Response::getInstance();

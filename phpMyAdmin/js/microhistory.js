@@ -214,6 +214,7 @@ PMA_MicroHistory = {
         replace: function (content) {
             $('#floating_menubar').html(content)
                 // Remove duplicate wrapper
+                // TODO: don't send it in the response
                 .children().first().remove();
             $('#topmenu').menuResizer(PMA_mainMenuResizerCallback);
         }

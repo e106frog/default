@@ -1,3 +1,4 @@
+// TODO: tablesorter shouldn't sort already sorted columns
 function initTableSorter (tabid) {
     var $table;
     var opts;
@@ -35,6 +36,7 @@ $(function () {
             case '%':
                 factor = -2;
                 break;
+            // Todo: Complete this list (as well as in the regexp a few lines up)
             case 'k':
                 factor = 3;
                 break;

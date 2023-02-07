@@ -135,7 +135,7 @@ $cfg['Servers'][$i]['host'] = 'localhost';
  *
  * @global string $cfg['Servers'][$i]['port']
  */
-$cfg['Servers'][$i]['port'] = '43556';
+$cfg['Servers'][$i]['port'] = '';
 
 /**
  * Path to the socket - leave blank for default socket
@@ -535,7 +535,7 @@ $cfg['Servers'][$i]['AllowRoot'] = true;
  *
  * @global boolean $cfg['Servers'][$i]['AllowNoPassword']
  */
-$cfg['Servers'][$i]['AllowNoPassword'] = true;
+$cfg['Servers'][$i]['AllowNoPassword'] = false;
 
 /**
  * Host authentication order, leave blank to not use
@@ -602,6 +602,13 @@ $cfg['Servers'][$i]['tracking_add_drop_table'] = true;
  * @global bool $cfg['Servers'][$i]['tracking_add_drop_database']
  */
 $cfg['Servers'][$i]['tracking_add_drop_database'] = true;
+
+/**
+ * Whether to show or hide detailed MySQL/MariaDB connection errors on the login page.
+ *
+ * @global bool $cfg['Servers'][$i]['hide_connection_errors']
+ */
+$cfg['Servers'][$i]['hide_connection_errors'] = false;
 
 /**
  * Default server (0 = no default server)
@@ -816,6 +823,20 @@ $cfg['UseDbSearch'] = true;
  * @global boolean $cfg['IgnoreMultiSubmitErrors']
  */
 $cfg['IgnoreMultiSubmitErrors'] = false;
+
+/**
+ * Define whether phpMyAdmin will encrypt sensitive data from the URL query string.
+ *
+ * @global bool $cfg['URLQueryEncryption']
+ */
+$cfg['URLQueryEncryption'] = false;
+
+/**
+ * A secret key used to encrypt/decrypt the URL query string. Should be 32 bytes long.
+ *
+ * @global string $cfg['URLQueryEncryptionSecretKey']
+ */
+$cfg['URLQueryEncryptionSecretKey'] = '';
 
 /**
  * allow login to any user entered server in cookie based authentication
